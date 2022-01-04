@@ -2,6 +2,8 @@
 def multiple_returns(sentence):
     sentl = len(sentence)
     if sentl > 0:
-        return (tuple_a = (sentl, sentence[0]))
+        tuple_a = (sentl, sentence[0])
+        return (tuple_a)
     else:
-        return (tuple_a = (sentl, None))
+        tuple_a = (sentl, None)
+        return (tuple_a)
