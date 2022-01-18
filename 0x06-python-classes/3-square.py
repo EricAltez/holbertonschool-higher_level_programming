@@ -10,7 +10,7 @@ class Square:
     """
 
     def __init__(self, size=0):
-	"""
+        """
         Define class elements
         """
         if(type(size) != int):
