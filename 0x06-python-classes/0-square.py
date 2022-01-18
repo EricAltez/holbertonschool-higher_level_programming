@@ -5,4 +5,7 @@ empty class
 
 
 class Square:
+    """
+    very usefull comment
+    """
     pass
