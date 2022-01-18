@@ -1,9 +1,18 @@
 #!/usr/bin/python3
+"""
+Hamer time!!
+"""
 
 
 class Square:
+    """
+    Create Square class
+    """
 
     def __init__(self, size=0):
+	"""
+        Define class elements
+        """
         if(type(size) != int):
             raise TypeError("size must be an integer")
         if(size < 0):
@@ -11,4 +20,7 @@ class Square:
         self.__size = size
 
     def area(self):
+	"""
+	Define area Method
+	"""
         return self.__size * self.__size
