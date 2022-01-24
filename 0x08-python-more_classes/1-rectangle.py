@@ -5,10 +5,10 @@
 class Rectangle:
     """create rectangle class"""
 
-    def __init__(self, width=0 height=0):
+    def __init__(self, width=0, height=0):
         """define rectangle class elements"""
-        self.__width = height
-        self.__height = width
+        self.__width = width
+        self.__height = height
 
     @property
     def width(self):
