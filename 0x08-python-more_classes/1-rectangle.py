@@ -26,7 +26,7 @@ class Rectangle:
 
     @property
     def height(self):
-        """ Geter for __height """
+        """ Getter for __height """
         return (self.__height)
 
     @height.setter
