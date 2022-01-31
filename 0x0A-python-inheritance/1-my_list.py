@@ -5,8 +5,7 @@ MyList class module
 
 
 class MyList(list):
-    """ empty class, inherits from list """
-    pass
+    """ MyList class """
 
     def print_sorted(self):
         """ prints the list in ascending order """
