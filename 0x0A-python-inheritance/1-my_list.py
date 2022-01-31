@@ -9,4 +9,7 @@ class MyList(list):
 
     def print_sorted(self):
         """ prints the list in ascending order """
+        for item in self:
+            if type(item) is not int:
+                raise TypeError("item must be an integer")
         print(sorted(self))
