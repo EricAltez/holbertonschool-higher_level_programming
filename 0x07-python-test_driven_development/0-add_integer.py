@@ -1,8 +1,14 @@
 #!/usr/bin/python3
+"""
+function: add 2 int
+return: int
+"""
+
 
 def add_integer(a, b=98):
-    if a is not int or a is not float:
+    """ args must be int or float """
+    if type(a) != int and type(a) != float:
         raise TypeError("a must be an integer")
-    if b is not int or a is not float:
+    if type(b) != int and type(b) != float:
         raise TypeError("b must be an integer")
-    return int(a) + int(b)
+    return int(a + b)
