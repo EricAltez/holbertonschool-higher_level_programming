@@ -5,4 +5,5 @@ empty geometry module
 
 
 class BaseGeometry:
+    """empty class"""
     pass
