@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 """
-
+Rectangle module
 """
 
 from models.base import Base
 
 class Rectangle(Base):
+    """ Rectangle class """
 
     @property
     def width(self):
@@ -64,6 +65,7 @@ class Rectangle(Base):
         self.__y = value
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """ init definition """
 
         self.width = width
         self.height = height
@@ -90,8 +92,13 @@ class Rectangle(Base):
         """ str overriding """
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
 
-
-
+    def update(self, *args):
+        """ assigns arguments to atributes """
+        attri = {0: "id", 1: "width", 2: "height", 3: "x", 4: "y"}
+        if args and len(args) > 0:
+            if len(args) < 6:
+                for i in range(len(args)):
+                    setattr(self, attri[i], args[i])
 
 
 
