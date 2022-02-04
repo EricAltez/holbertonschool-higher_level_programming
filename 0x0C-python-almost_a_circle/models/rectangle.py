@@ -92,13 +92,16 @@ class Rectangle(Base):
         """ str overriding """
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ assigns arguments to atributes """
         attri = {0: "id", 1: "width", 2: "height", 3: "x", 4: "y"}
         if args and len(args) > 0:
             if len(args) < 6:
                 for i in range(len(args)):
                     setattr(self, attri[i], args[i])
+        else:
+            for key in kwargs:
+                setattr(self, key, kwargs[key])
 
 
 
