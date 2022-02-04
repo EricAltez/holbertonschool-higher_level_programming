@@ -7,14 +7,6 @@ from models.base import Base
 
 class Rectangle(Base):
 
-    def __init__(self, width, height, x=0, y=0, id=None):
-
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
-        super().__init__(id)
-
     @property
     def width(self):
         """ getter for width """
@@ -71,6 +63,14 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = value
 
+    def __init__(self, width, height, x=0, y=0, id=None):
+
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
+        super().__init__(id)
+
     def area(self):
         """ returns the area"""
         return(self.__width * self.__height)
@@ -82,7 +82,9 @@ class Rectangle(Base):
                 print("#", end='')
             print()
 
-
+    def __str__(self):
+        """ str overriding """
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
 
 
 
