@@ -5,6 +5,7 @@ Square module
 
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """Square class"""
 
@@ -40,9 +41,9 @@ class Square(Rectangle):
     def to_dictionary(self):
         """ dictionary representation of a Rectangle """
         dic = {
-            'id' : self.id,
-            'x' : self.x,
-            'size' : self.width,
-            'y' : self.y
+            'id': self.id,
+            'x': self.x,
+            'size': self.width,
+            'y': self.y
         }
         return dic

@@ -5,6 +5,7 @@ Rectangle module
 
 from models.base import Base
 
+
 class Rectangle(Base):
     """ Rectangle class """
 
@@ -82,7 +83,7 @@ class Rectangle(Base):
         for k in range(self.__y):
             print()
         for i in range(self.__height):
-            for l in range(self.__x):
+            for m in range(self.__x):
                 print(" ", end="")
             for j in range(self.__width):
                 print("#", end='')
@@ -90,7 +91,9 @@ class Rectangle(Base):
 
     def __str__(self):
         """ str overriding """
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        ov = f"[Rectangle] ({self.id}) {self.x}/{self.y} -"
+        ov += f" {self.width}/{self.height}"
+        return ov
 
     def update(self, *args, **kwargs):
         """ assigns arguments to atributes """
@@ -106,9 +109,9 @@ class Rectangle(Base):
     def to_dictionary(self):
         """ dictionary representation of a Rectangle """
         dic = {
-            'x' : self.x,
-            'y' : self.y,
-            'id' : self.id,
+            'x': self.x,
+            'y': self.y,
+            'id': self.id,
             'height': self.height,
             'width': self.width
         }
