@@ -18,6 +18,7 @@ class BaseTest(unittest.TestCase):
         e = Base(11)
         f = Base()
         g = Base(-15)
+        h = Base(89)
 
         self.assertEquals(a.id, 1)
         self.assertEquals(b.id, 15)
@@ -26,6 +27,9 @@ class BaseTest(unittest.TestCase):
         self.assertEquals(e.id, 11)
         self.assertEquals(f.id, 4)
         self.assertEquals(g.id, -15)
+        self.assertEquals(h.id, 89)
+        h = Base(98)
+        self.assertEquals(h.id, 98)
 
 if __name__ == '__main__':
     unittest.main()
