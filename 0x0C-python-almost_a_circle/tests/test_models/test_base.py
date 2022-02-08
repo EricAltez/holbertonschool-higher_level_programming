@@ -31,6 +31,15 @@ class BaseTest(unittest.TestCase):
         h = Base(98)
         self.assertEquals(h.id, 98)
 
+    def test_documentation(self):
+        self.assertTrue(len(Base.__doc__) > 0)
+        self.assertTrue(len(Base.__doc__) > 0)
+        self.assertTrue(len(Base.to_json_string.__doc__) > 0)
+        self.assertTrue(len(Base.create.__doc__) > 0)
+        self.assertTrue(len(Base.from_json_string.__doc__) > 0)
+        self.assertTrue(len(Base.save_to_file.__doc__) > 0)
+        self.assertTrue(len(Base.load_from_file.__doc__) > 0)
+
     def test_to_json_string(self):
         """ test json """
         r1 = Rectangle(10, 7, 2, 8)
@@ -39,6 +48,8 @@ class BaseTest(unittest.TestCase):
         json_dictionary = Base.to_json_string([dictionary])
         self.assertTrue(type(json_dictionary) is str)
 
+    def test_to_json_string(self):
+        """ json test """
 
 if __name__ == '__main__':
     unittest.main()
