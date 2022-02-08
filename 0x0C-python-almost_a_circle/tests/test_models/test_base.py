@@ -1,12 +1,10 @@
 #!/usr/bin/python3
-""" Base tests module"""
-import unittest
+""" BaseTest module """
+
+
 from models.base import Base
+import unittest
 
-class BaseTests(unittest.TestCase):
-    """ Base Model test class """
 
-    def test_no_args(self):
-        b1 = Base()
-        b2 = Base()
-        self.assertEqual(b1.id, b2.id - 1)
+class BaseTest(unittest.TestCase):
+    """ BaseTest class """
