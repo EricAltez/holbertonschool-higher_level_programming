@@ -16,4 +16,20 @@ class RectangleTests(unittest.TestCase):
         self.assertTrue(len(Rectangle.display.__doc__) > 0)
         self.assertTrue(len(Rectangle.__str__.__doc__) > 0)
         self.assertTrue(len(Rectangle.update.__doc__) > 0)
-        self.assertTrue(len(Rectangle.to_dictionary.__doc__) > 0) 
+        self.assertTrue(len(Rectangle.to_dictionary.__doc__) > 0)
+
+    def test_height(self):
+        for h in [-1, 0]:
+            with self.subTest(h=h):
+                self.assertRaises(ValueError, Rectangle, h, 2)
+        for h in ['a', 'hola', (1, 2), [1, 2, 3], {'a': 1, 'b': 3}, 'nan', 'inf', 2.5]:
+            with self.subTest(h=h):
+                self.assertRaises(TypeError, Rectangle, h, 2)
+
+    def test_width(self):
+        for h in [-1, 0]:
+            with self.subTest(h=h):
+                self.assertRaises(ValueError, Rectangle, 2, h)
+        for h in ['a', 'hola', (1, 2), [1, 2, 3], {'a': 1, 'b': 3}, 'nan', 'inf', 2.5]:
+            with self.subTest(h=h):
+                self.assertRaises(TypeError, Rectangle, 2, h)
