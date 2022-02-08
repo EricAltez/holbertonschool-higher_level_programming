@@ -4,6 +4,7 @@ Rectangle module
 """
 
 from models.base import Base
+""" import base class """
 
 
 class Rectangle(Base):
@@ -58,9 +59,9 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        """ setter fot y """
+        """ setter for y """
         if type(value) is not int:
-            raise TypeError("x must be an integer")
+            raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
@@ -68,11 +69,11 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         """ init definition """
 
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
-        super().__init__(id)
 
     def area(self):
         """ returns the area"""
