@@ -12,11 +12,17 @@ class BaseTest(unittest.TestCase):
     def test_asign_autoid(self):
         """ test auto id asignation """
         a = Base()
-        b = Base()
+        b = Base(15)
         c = Base()
         d = Base()
-        e = Base()
+        e = Base(11)
         f = Base()
-        g = Base()
+        g = Base(-15)
 
         self.assertEquals(a.id, 1)
+        self.assertEquals(b.id, 15)
+        self.assertEquals(c.id, 2)
+        self.assertEquals(d.id, 3)
+        self.assertEquals(e.id, 11)
+        self.assertEquals(f.id, 4)
+        self.assertEquals(g.id, -15)
