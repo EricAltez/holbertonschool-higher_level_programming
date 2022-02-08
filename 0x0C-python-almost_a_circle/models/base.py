@@ -55,3 +55,15 @@ class Base:
             my_dummy = cls(2)
         my_dummy.update(**dictionary)
         return my_dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances"""
+        list_of_instances = []
+        if path.isfile('{}.json'.format(cls.__name__)):
+            with open('{}.json'.format(cls.__name__), 'r') as my_file:
+                for row in my_file:
+                    instance = cls.from_json_string(row)
+                    for item in instance:
+                        list_of_instances.append(cls.create(**item))
+        return list_of_instances
