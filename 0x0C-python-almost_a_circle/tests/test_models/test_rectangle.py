@@ -33,3 +33,15 @@ class RectangleTests(unittest.TestCase):
         for h in ['a', 'hola', (1, 2), [1, 2, 3], {'a': 1, 'b': 3}, 'nan', 'inf', 2.5]:
             with self.subTest(h=h):
                 self.assertRaises(TypeError, Rectangle, 2, h)
+
+    def test_x(self):
+        self.assertRaises(ValueError, Rectangle, 2, 10, -5)
+        for x in ['a', 'hola', (1, 2), [1, 2, 3], {'a': 1, 'b': 3}, 'nan', 'inf', 2.5]:
+            with self.subTest(x=x):
+                self.assertRaises(TypeError, Rectangle, 2, 10, x)
+
+    def test_y(self):
+        self.assertRaises(ValueError, Rectangle, 2, 10, 2, -2)
+        for y in ['a', 'hola', (1, 2), [1, 2, 3], {'a': 1, 'b': 3}, 'nan', 'inf', 2.5]:
+            with self.subTest(y=y):
+                self.assertRaises(TypeError, Rectangle, (2, 10, 0, y))
