@@ -36,3 +36,12 @@ class Base:
                 for item in list_objs:
                     aux_l.append(cls.to_dictionary(item))
                 my_file.write(cls.to_json_string(aux_l))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ returns list of JSON str representation json_string """
+        aux_l = []
+        if json_string is None:
+            return aux_l
+        else:
+            return json.loads(json_string)
