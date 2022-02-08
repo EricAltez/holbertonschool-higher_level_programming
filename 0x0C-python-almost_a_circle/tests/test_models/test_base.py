@@ -48,8 +48,6 @@ class BaseTest(unittest.TestCase):
         json_dictionary = Base.to_json_string([dictionary])
         self.assertTrue(type(json_dictionary) is str)
 
-    def test_to_json_string(self):
-        """ json test """
 
 if __name__ == '__main__':
     unittest.main()
