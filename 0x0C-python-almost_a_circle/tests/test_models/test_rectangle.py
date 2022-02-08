@@ -19,29 +19,39 @@ class RectangleTests(unittest.TestCase):
         self.assertTrue(len(Rectangle.to_dictionary.__doc__) > 0)
 
     def test_height(self):
-        for h in [-1, 0]:
-            with self.subTest(h=h):
-                self.assertRaises(ValueError, Rectangle, h, 2)
-        for h in ['a', 'hola', (1, 2), [1, 2, 3], {'a': 1, 'b': 3}, 'nan', 'inf', 2.5]:
-            with self.subTest(h=h):
-                self.assertRaises(TypeError, Rectangle, h, 2)
+        """ height test """
+        self.assertRaises(ValueError, Rectangle, 10, 0)
+        self.assertRaises(ValueError, Rectangle, 10, -1)
+        self.assertRaises(TypeError, Rectangle, 10, (2, 1))
+        self.assertRaises(TypeError, Rectangle, 10, 'a')
+        self.assertRaises(TypeError, Rectangle, 10, [1, 2, 3])
+        self.assertRaises(TypeError, Rectangle, 10, {'a': 1, 'b': 2})
+        self.assertRaises(TypeError, Rectangle, 10, 1.5)
+        self.assertRaises(TypeError, Rectangle, 10, 'nan')
+        self.assertRaises(TypeError, Rectangle, 10, 'inf')
+        self.assertRaises(TypeError, Rectangle, 10, 2.5)
+        self.assertRaises(TypeError, Rectangle, 1, 2, 3)
+        self.assertRaises(TypeError, Rectangle, 1, 2, 3, 4)
+        self.assertRaises(TypeError, Rectangle, 1, 2, 3, 4, 5)
 
     def test_width(self):
-        for h in [-1, 0]:
-            with self.subTest(h=h):
-                self.assertRaises(ValueError, Rectangle, 2, h)
-        for h in ['a', 'hola', (1, 2), [1, 2, 3], {'a': 1, 'b': 3}, 'nan', 'inf', 2.5]:
-            with self.subTest(h=h):
-                self.assertRaises(TypeError, Rectangle, 2, h)
+        """ width test """
+        self.assertRaises(ValueError, Rectangle, 0, 10)
+        self.assertRaises(ValueError, Rectangle, -1, 10)
+        self.assertRaises(TypeError, Rectangle, (1, 2), 10)
+        self.assertRaises(TypeError, Rectangle, 'a', 10)
+        self.assertRaises(TypeError, Rectangle, [1, 2, 3], 10)
+        self.assertRaises(TypeError, Rectangle, {'a': 1, 'b': 2}, 10)
+        self.assertRaises(TypeError, Rectangle, 1.5, 10)
+        self.assertRaises(TypeError, Rectangle, 'nan', 10)
+        self.assertRaises(TypeError, Rectangle, 'inf', 10)
+        self.assertRaises(TypeError, Rectangle, 2.5, 10)
+        self.assertRaises(TypeError, Rectangle, 1, 2, 3)
+        self.assertRaises(TypeError, Rectangle, 1, 2, 3, 4)
+        self.assertRaises(TypeError, Rectangle, 1, 2, 3, 4, 5)
 
     def test_x(self):
-        self.assertRaises(ValueError, Rectangle, 2, 10, -5)
-        for x in ['a', 'hola', (1, 2), [1, 2, 3], {'a': 1, 'b': 3}, 'nan', 'inf', 2.5]:
-            with self.subTest(x=x):
-                self.assertRaises(TypeError, Rectangle, 2, 10, x)
+        """ x test """
 
     def test_y(self):
-        self.assertRaises(ValueError, Rectangle, 2, 10, 2, -2)
-        for y in ['a', 'hola', (1, 2), [1, 2, 3], {'a': 1, 'b': 3}, 'nan', 'inf', 2.5]:
-            with self.subTest(y=y):
-                self.assertRaises(TypeError, Rectangle, (2, 10, 0, y))
+        """ y test """
