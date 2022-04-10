@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Get states by user imput
+get all cities
 """
 
 
@@ -17,9 +17,9 @@ if __name__ == "__main__":
             )
 
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states\
-            WHERE name LIKE BINARY '{}'\
-            ORDER BY id ASC".format(argv[4]))
+    cursor.execute("SELECT cities.id, cities.name, states.name FROM cities\
+            JOIN states ON cities.state_id = states.id\
+            ORDER BY cities.id ASC")
     row = cursor.fetchall()
     if row:
         for element in row:

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Get states by parameter
+safe from MySQL injections!
 """
 
 
