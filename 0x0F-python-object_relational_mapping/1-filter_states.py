@@ -23,3 +23,5 @@ if __name__ == "__main__":
     if row:
         for element in row:
             print(element)
+    cursor.close()
+    db.close()
