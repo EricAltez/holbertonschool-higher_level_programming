@@ -18,8 +18,8 @@ if __name__ == "__main__":
     try:
         res = x.json()
         if len(res) == 0:
-            print ("No result")
+            print("No result")
         else:
-            print ("[{}] {}".format(res.get("id"), res.get("name")))
+            print("[{}] {}".format(res.get("id"), res.get("name")))
     except Exception:
         print("Not a valid JSON")
